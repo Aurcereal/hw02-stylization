@@ -1,4 +1,4 @@
-# HW 4: *3D Stylization*
+# Unity *3D Stylization*
 
 ## Overview
 
