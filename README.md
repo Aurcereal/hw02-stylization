@@ -6,7 +6,7 @@ For this project, I created a stylized 3D scene in Unity based off of 2D art of 
 
 [![Final Result](ShowcaseMedia/introDemoThumbnail.png)](https://youtu.be/Wc42boKrfH8)
 
-[Live Demo](https://aurcereal.github.io/hw02-stylization/)
+<font size="7">[Live Demo](https://aurcereal.github.io/hw02-stylization/)</font>
 
 ## Concept Art
 
