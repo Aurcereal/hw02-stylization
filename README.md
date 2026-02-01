@@ -21,7 +21,7 @@ Press space to toggle monochrome mode.
 
 
 ---
-## Improved Surface Shader
+## Toon Surface Shader
 
 After implementing toon shading, I added multiple light support as well as specular highlights.  I apply noise to the light received from every light source in order to achieve a more stylized effect.
 
@@ -31,7 +31,7 @@ I also created a custom texture that I used to modify the hard shadows.  I then 
 
 ![](ShowcaseMedia/customShadows.png)
 
-## Special Surface Shader
+## TV Screen Shader
 
 I made my special surface shader a TV screen as that's what I was planning on making my scene based on.  I downloaded [this](https://sketchfab.com/3d-models/black-and-white-belweder-ot-1782-tv-set-5c2be264f3ce4e11ac9387505e0bcea0) TV model, published by the Virtual Museums of Malopolska, off of Sketchfab.  I wrote a procedural sawtoothe wave texture in HLSL and distorted it with noise.  I added a vignette to the screen and a clover in the center using SDFs.
 
@@ -41,6 +41,10 @@ I also distorted the vertex positions using noise with respect to posterized tim
 
 
 https://github.com/user-attachments/assets/05f9ac78-ba59-4b0f-9f15-d5365cb7c67f
+
+Here are the graph nodes that determine how the TV screen UVs are distorted.  I created some HLSL nodes as well.
+
+![](ShowcaseMedia/tvUVDistortionGraph.png)
 
 ## Outlines
 I created a Post Processing shader that creates outlines using a sobel filter on the depth texture: at parts of the screen where there's a strong horizontal or vertical change in depth, an outline will display.
@@ -54,6 +58,14 @@ I then added another outline based on the change in normal across the object.  A
 I then displaced the UVs used to create the outline effects so that the outlines don't conform to the object.  To offset the UVs, I used 2D FBM and a horizontal glitch offset very similar to the screen's glitch effect.
 
 ![](ShowcaseMedia/noisyOutlines.png)
+
+Here are the graph nodes that distort the outlines.  I reuse the HLSL function node for the TV Screen distortion.
+
+![](ShowcaseMedia/outlineUVTurbulenceGraph.png)
+
+And here are the graph nodes that composite the outlines.
+
+![](ShowcaseMedia/outlineOutlineSampleGraph.png)
 
 ## Full Screen Post Process Effect
 I created another Post Processing shader that displaces the UVs using multiple layers of FBM, creating a noisy effect.  I also added a vignette, blue tint, and an increase in brightness near the center of the screen.
