@@ -2,7 +2,7 @@
 
 ## Overview
 
-For this project, I created a stylized 3D scene in Unity based off of 2D art of the game OneShot.  Below is a video of the final result.
+For this project, I created a stylized 3D scene in Unity based off of 2D art of the game OneShot.  Below is a video of the final result.  I used Shader Graph and HLSL within URP.
 
 [![Final Result](ShowcaseMedia/introDemoThumbnail.png)](https://youtu.be/Wc42boKrfH8)
 
